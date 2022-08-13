@@ -35,29 +35,21 @@ const newNode = (
 };
 
 interface Component {
-  id: String;
+  id: string;
   update: () => void;
 }
 
 interface Transistor extends Component {
-  B: Connection;
-  E: Connection;
-  C: Connection;
-  setB: (value: boolean) => void;
-  setE: (value: boolean) => void;
+  in1: Connection;
+  in2: Connection;
+  out: Connection;
 }
-const newTransistor = (id: String): Transistor => {
+const newTransistor = (id: string): Transistor => {
   let x: Transistor = {
     id,
-    B: newNode(true),
-    E: newNode(true),
-    C: newNode(),
-    setB(value: boolean) {
-      this.B.setValue(value);
-    },
-    setE(value: boolean) {
-      this.E.setValue(value);
-    },
+    in1: newNode(true),
+    in2: newNode(true),
+    out: newNode(),
     update() {
       if (this.B.value) {
         this.C.setValue(this.E.value);
@@ -66,9 +58,9 @@ const newTransistor = (id: String): Transistor => {
       }
     },
   };
-  x.B.parent = x;
-  x.E.parent = x;
-  x.C.parent = x;
+  x.in1.parent = x;
+  x.in2.parent = x;
+  x.out.parent = x;
   return x;
 };
 

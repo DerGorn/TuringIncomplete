@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-size: 1.3em;
+  text-align: center;
+  text-shadow: 1px 1px #003153;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  border: 1px solid black;
+}
+::-webkit-scrollbar-track {
+  background: aliceblue;
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+  border: 1px solid black;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: gold;
+}
+
+.list {
+  background-color: #003153;
+  overflow: auto;
+  overflow-x: hidden;
+  border-right: 2px solid black;
+}
+
+#component_list {
+  height: 90vh;
+  width: 20vw;
+  max-width: 230px;
+}
+
+.list_entry {
+  width: 80%;
+  height: 5vh;
+  margin: 10%;
+  background-color: white;
+  border-radius: 5%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.list_entry:hover {
+  background-color: aliceblue;
+  border: 2px solid gold;
+  text-decoration: underline;
+  text-decoration-color: #003153;
+}
+
+.menu {
+  background-color: #003153;
+  overflow: hidden;
+  border-right: 2px solid black;
+  display: flex;
+}
+
+#ui_field {
+  width: 100vw;
+  height: 10vh;
+  border-bottom: 2px solid black;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.menu div {
+  width: 15vw;
+  height: 5vh;
+  margin: 2.5vw;
+  max-width: 150px;
+}
+
+#logo {
+  margin-top: 1vw;
+}
+
+.menu_text {
+  padding-top: 2vh;
+  color: aliceblue;
+  text-shadow: 2px 2px black;
+  font-weight: bold;
+}
+
+.menu_button {
+  margin: 2.5vw;
+  border-radius: 5%;
+  width: 15vw;
+  height: 5vh;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 1em;
+  text-align: center;
+  text-shadow: 1px 1px #003153;
+  line-height: 0.9em;
+  cursor: pointer;
+}
+
+.menu_button:hover {
+  background-color: aliceblue;
+  border: 2px solid gold;
+  text-decoration: underline;
+  text-decoration-color: #003153;
+}
+
+#load::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#load::before {
+  content: "  Load \A Progress";
+  white-space: pre-wrap;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#load {
+  max-width: 150px;
+}

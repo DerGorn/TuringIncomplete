@@ -30,15 +30,9 @@ var newNode = function (input, value, parent, outputCable) {
 var newTransistor = function (id) {
     var x = {
         id: id,
-        B: newNode(true),
-        E: newNode(true),
-        C: newNode(),
-        setB: function (value) {
-            this.B.setValue(value);
-        },
-        setE: function (value) {
-            this.E.setValue(value);
-        },
+        in1: newNode(true),
+        in2: newNode(true),
+        out: newNode(),
         update: function () {
             if (this.B.value) {
                 this.C.setValue(this.E.value);
@@ -48,9 +42,9 @@ var newTransistor = function (id) {
             }
         },
     };
-    x.B.parent = x;
-    x.E.parent = x;
-    x.C.parent = x;
+    x.in1.parent = x;
+    x.in2.parent = x;
+    x.out.parent = x;
     return x;
 };
 var createNewConnection = function (inputNode, outputNode) {

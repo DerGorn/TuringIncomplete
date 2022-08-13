@@ -1,6 +1,9 @@
-interface On extends Connection {}
-const newOn = (): On => {
+interface On extends Connection {
+  id: string;
+}
+const newOn = (id: string): On => {
   return {
+    id,
     input: false,
     value: true,
     parent: null,
@@ -19,9 +22,12 @@ const newOn = (): On => {
   };
 };
 
-interface Off extends Connection {}
-const newOff = (): Off => {
+interface Off extends Connection {
+  id: string;
+}
+const newOff = (id: string): Off => {
   return {
+    id,
     input: false,
     value: false,
     parent: null,
@@ -38,4 +44,9 @@ const newOff = (): Off => {
       this.outputCable.update();
     },
   };
+};
+
+interface And extends Transistor {}
+const newAnd = (id: string): And => {
+  return newTransistor(id);
 };

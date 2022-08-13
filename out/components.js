@@ -1,5 +1,6 @@
-var newOn = function () {
+var newOn = function (id) {
     return {
+        id: id,
         input: false,
         value: true,
         parent: null,
@@ -19,8 +20,9 @@ var newOn = function () {
         },
     };
 };
-var newOff = function () {
+var newOff = function (id) {
     return {
+        id: id,
         input: false,
         value: false,
         parent: null,
@@ -39,4 +41,7 @@ var newOff = function () {
             this.outputCable.update();
         },
     };
+};
+var newAnd = function (id) {
+    return newTransistor(id);
 };
